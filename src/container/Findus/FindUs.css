@@ -1,0 +1,10 @@
+.findus-info h1 {
+    margin-bottom: 3rem;
+}
+.app__wrapper-content h2 {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 130%;
+    font-family: var(--font-base);
+    color: var(--color-golden);
+}
