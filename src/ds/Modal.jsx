@@ -7,7 +7,7 @@ const Backdrop = (props) => {
 
 const Modal = (props) => {
     return (
-        <div className='app__modal'>
+        <div className='app__modal app__bg'>
             <div className='app__modal-container'>{props.children}</div>
         </div>
     );

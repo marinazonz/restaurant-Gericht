@@ -8,7 +8,7 @@ import Intro from "./Intro/Intro";
 import Laurels from "./Laurels/Laurels";
 import SpecialMenu from "./Menu/SpecialMenu";
 import BookTable from "./BookTable/BookTable";
-import LogInForm from "./LogInForm/LogInForm";
+import RegisterForm from "./RegisterForm/RegisterForm";
 
 export {
     AboutUs,
@@ -21,5 +21,5 @@ export {
     Laurels,
     SpecialMenu,
     BookTable,
-    LogInForm,
+    RegisterForm,
 };

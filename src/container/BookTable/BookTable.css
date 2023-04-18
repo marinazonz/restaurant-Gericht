@@ -1,0 +1,67 @@
+.app_bookTable {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.app__bookTable-contact,
+.app__bookTable-work {
+    flex: 1;
+    text-align: center;
+}
+
+.app_bookTable button {
+    width: max-content;
+}
+
+.app__bookTable-headtext {
+    font-family: var(--font-base);
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: 0.04em;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.app__bookTable-work p:nth-child(2n + 1) {
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 2000px) {
+    .app__bookTable-headtext {
+        font-size: 51px;
+        line-height: 61.6px;
+    }
+
+    .app__bookTable-contact,
+    .app__bookTable-work {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 2000px) {
+    .app__bookTable-contact,
+    .app__bookTable-work {
+        width: 100%;
+    }
+
+    .app_bookTable {
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .app_bookTable {
+        padding: 2rem 0;
+    }
+
+    .app_bookTable button {
+        width: 100%;
+    }
+}

@@ -40,7 +40,7 @@ const Navbar = ({ openModalforLogIn, openModalforBooktable }) => {
                     className='p__opensans'
                     onClick={openModalforLogIn}
                 >
-                    Log in / Register
+                    Register
                 </a>
 
                 <div className='app__navbar-login-divLine' />

@@ -12,7 +12,7 @@ import {
     Laurels,
     SpecialMenu,
     BookTable,
-    LogInForm,
+    RegisterForm,
 } from "./container";
 import ModalOverlay from "./ds/Modal";
 
@@ -31,14 +31,16 @@ function App() {
             />
             {modalforLogInIsOpen && (
                 <ModalOverlay onClose={() => setModalforLogInIsOpen(false)}>
-                    <LogInForm
+                    <RegisterForm
                         onCloseModal={() => setModalforLogInIsOpen(false)}
                     />
                 </ModalOverlay>
             )}
             {modalforBookTableIsOpen && (
                 <ModalOverlay onClose={() => setModalforBookTableIsOpen(false)}>
-                    <BookTable />
+                    <BookTable
+                        onCloseModal={() => setModalforBookTableIsOpen(false)}
+                    />
                 </ModalOverlay>
             )}
             <Header />
