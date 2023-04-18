@@ -5,7 +5,10 @@
     align-items: center;
     background: var(--color-black);
 
-    padding: 1rem 2rem;
+    padding: 3rem 2rem;
+
+    position: fixed;
+    z-index: 2;
 }
 
 .app__navbar-logo {
@@ -75,7 +78,7 @@
     transition: 0.3s ease;
 
     flex-direction: column;
-    z-index: 5;
+    z-index: 10;
 }
 
 .app__navbar-smallscreen_overlay .overlay__close {

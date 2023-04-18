@@ -6,7 +6,7 @@ import images from "../../constants/images";
 
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ openModalforLogIn, openModalforBooktable }) => {
     const [toggleMenu, setToggleMenu] = useState(false);
 
     return (
@@ -35,13 +35,21 @@ const Navbar = () => {
                 </li>
             </ul>
             <div className='app__navbar-login'>
-                <a href='#login' className='p__opensans'>
+                <a
+                    href='#login'
+                    className='p__opensans'
+                    onClick={openModalforLogIn}
+                >
                     Log in / Register
                 </a>
 
                 <div className='app__navbar-login-divLine' />
 
-                <a href='/' className='p__opensans'>
+                <a
+                    href='#book'
+                    className='p__opensans'
+                    onClick={openModalforBooktable}
+                >
                     Book Table
                 </a>
             </div>
@@ -50,7 +58,7 @@ const Navbar = () => {
                     color='#fff'
                     fontSize={27}
                     onClick={() => {
-                        setToggleMenu(true);
+                        setToggleMenu(!toggleMenu);
                     }}
                 />
                 {toggleMenu && (
@@ -64,21 +72,56 @@ const Navbar = () => {
                         />
                         <ul className='app__navbar-smallscreen_links'>
                             <li className='p__opensans'>
-                                <a href='#home'>Home</a>{" "}
+                                <a
+                                    href='#home'
+                                    onClick={() => {
+                                        setToggleMenu(false);
+                                    }}
+                                >
+                                    Home
+                                </a>{" "}
                             </li>
                             <li className='p__opensans'>
-                                <a href='#about'>About</a>
+                                <a
+                                    href='#about'
+                                    onClick={() => {
+                                        setToggleMenu(false);
+                                    }}
+                                >
+                                    About
+                                </a>
                             </li>
 
                             <li className='p__opensans'>
-                                <a href='#menu'>Menu</a>
+                                <a
+                                    href='#menu'
+                                    onClick={() => {
+                                        setToggleMenu(false);
+                                    }}
+                                >
+                                    Menu
+                                </a>
                             </li>
 
                             <li className='p__opensans'>
-                                <a href='#awards'>Awards</a>
+                                <a
+                                    href='#awards'
+                                    onClick={() => {
+                                        setToggleMenu(false);
+                                    }}
+                                >
+                                    Awards
+                                </a>
                             </li>
                             <li className='p__opensans'>
-                                <a href='#contact'>Contact</a>
+                                <a
+                                    href='#contact'
+                                    onClick={() => {
+                                        setToggleMenu(false);
+                                    }}
+                                >
+                                    Contact
+                                </a>
                             </li>
                         </ul>
                     </div>
