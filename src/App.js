@@ -64,7 +64,12 @@ function App() {
         <div className='App'>
             {appIsShown && appWhole}
             <Routes>
-                <Route path='/menu' element={<MenuPage />} />
+                <Route
+                    path='/menu'
+                    element={
+                        <MenuPage onClosePage={() => setAppIsShown(true)} />
+                    }
+                />
                 <Route path='/about_us' element={<AboutUsPage />} />
                 <Route path='/photo_gallery' element={<PhotoGalleryPage />} />
             </Routes>
