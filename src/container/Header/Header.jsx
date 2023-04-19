@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { images } from "../../constants";
 
 import "./Header.css";
 import { SubHeading } from "../../components";
 
-const Header = () => {
+const Header = ({ openPageMenu }) => {
     return (
         <div className='app_header app__wrapper section__padding' id='home'>
             <div className='app__wrapper_info'>
@@ -15,8 +16,12 @@ const Header = () => {
                     Condimentum volutpat morbi facilisis quam scelerisque
                     sapien. Et, penatibus aliquam amet tellus
                 </p>
-                <button type='button' className='custom__button'>
-                    Explore Menu
+                <button
+                    type='button'
+                    className='custom__button'
+                    onClick={openPageMenu}
+                >
+                    <Link to='/menu'>Explore Menu</Link>
                 </button>
             </div>
             <div className='app__wrapper_img'>

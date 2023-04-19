@@ -16,7 +16,7 @@ const Navbar = ({ openModalforLogIn, openModalforBooktable }) => {
             </div>
             <ul className='app__navbar-links'>
                 <li className='p__opensans'>
-                    <a href='#home'>Home</a>{" "}
+                    <a href='#home'>Home</a>
                 </li>
                 <li className='p__opensans'>
                     <a href='#about'>About</a>

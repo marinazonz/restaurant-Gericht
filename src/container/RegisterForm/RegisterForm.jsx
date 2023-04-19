@@ -5,14 +5,16 @@ import { SubHeading } from "../../components";
 
 const RegisterForm = ({ onCloseModal }) => {
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const nameInputRef = useRef();
     const emailInputRef = useRef();
-    const passwordInputRef = useRef();
+    const phoneInputRef = useRef();
 
     const submitFormHandler = (e) => {
         e.preventDefault();
 
+        const enteredName = nameInputRef.current.value;
         const enteredEmail = emailInputRef.current.value;
-        const enteredPassword = passwordInputRef.current.value;
+        const enteredPhone = phoneInputRef.current.value;
 
         //add some validation
         //add fetching info to the API
@@ -22,6 +24,15 @@ const RegisterForm = ({ onCloseModal }) => {
 
     const formForSubmit = (
         <form onSubmit={submitFormHandler} className='app__LogInForm-form'>
+            <div className='app__LogInForm-form_name'>
+                <input
+                    type='text'
+                    id='name'
+                    ref={nameInputRef}
+                    placeholder='Your Name'
+                />
+            </div>
+
             <div className='app__LogInForm-form_email'>
                 <input
                     type='email'
@@ -31,12 +42,12 @@ const RegisterForm = ({ onCloseModal }) => {
                 />
             </div>
 
-            <div className='app__LogInForm-form_password'>
+            <div className='app__LogInForm-form_phone'>
                 <input
-                    type='password'
-                    id='password'
-                    ref={passwordInputRef}
-                    placeholder='Your Password'
+                    type='tel'
+                    id='phone'
+                    ref={phoneInputRef}
+                    placeholder='Your Phone Number'
                 />
             </div>
 
