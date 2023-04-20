@@ -1,13 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 
 import images from "../../constants/images";
+import AppContext from "../../store/contex";
 
 import "./Navbar.css";
 
-const Navbar = ({ openModalforLogIn, openModalforBooktable }) => {
+const Navbar = () => {
     const [toggleMenu, setToggleMenu] = useState(false);
+
+    const appCtx = useContext(AppContext);
+
+    const openRegisterHandler = () => {
+        appCtx.toggleModalforRegister();
+    };
+    const openBookTableHandler = () => {
+        appCtx.toggleModalforBookTable();
+    };
 
     return (
         <nav className='app__navbar'>
@@ -38,7 +48,7 @@ const Navbar = ({ openModalforLogIn, openModalforBooktable }) => {
                 <a
                     href='#login'
                     className='p__opensans'
-                    onClick={openModalforLogIn}
+                    onClick={openRegisterHandler}
                 >
                     Register
                 </a>
@@ -48,7 +58,7 @@ const Navbar = ({ openModalforLogIn, openModalforBooktable }) => {
                 <a
                     href='#book'
                     className='p__opensans'
-                    onClick={openModalforBooktable}
+                    onClick={openBookTableHandler}
                 >
                     Book Table
                 </a>

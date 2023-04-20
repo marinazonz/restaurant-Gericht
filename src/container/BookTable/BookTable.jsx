@@ -1,6 +1,15 @@
-import "./BookTable.css";
+import { useContext } from "react";
 
-const BookTable = ({ onCloseModal }) => {
+import "./BookTable.css";
+import AppContext from "../../store/contex";
+
+const BookTable = () => {
+    const appCtx = useContext(AppContext);
+
+    const onCloseModalHandler = () => {
+        appCtx.toggleModalforBookTable();
+    };
+
     return (
         <section className='app_bookTable'>
             <div className='app__bookTable-contact'>
@@ -23,7 +32,7 @@ const BookTable = ({ onCloseModal }) => {
             <button
                 type='button'
                 className='custom__button'
-                onClick={onCloseModal}
+                onClick={onCloseModalHandler}
             >
                 Close
             </button>

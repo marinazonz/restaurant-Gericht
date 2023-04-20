@@ -1,10 +1,13 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useContext } from "react";
 
 import "./RegisterForm.css";
 import { SubHeading } from "../../components";
+import AppContext from "../../store/contex";
 
-const RegisterForm = ({ onCloseModal }) => {
+const RegisterForm = () => {
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const appCtx = useContext(AppContext);
+
     const nameInputRef = useRef();
     const emailInputRef = useRef();
     const phoneInputRef = useRef();
@@ -20,6 +23,10 @@ const RegisterForm = ({ onCloseModal }) => {
         //add fetching info to the API
 
         setFormSubmitted(true);
+    };
+
+    const onCloseModalHandler = () => {
+        appCtx.toggleModalforRegister();
     };
 
     const formForSubmit = (
@@ -58,7 +65,7 @@ const RegisterForm = ({ onCloseModal }) => {
                 <button
                     type='button'
                     className='custom__button'
-                    onClick={onCloseModal}
+                    onClick={onCloseModalHandler}
                 >
                     Close
                 </button>
@@ -74,7 +81,7 @@ const RegisterForm = ({ onCloseModal }) => {
             <button
                 type='button'
                 className='custom__button'
-                onClick={onCloseModal}
+                onClick={onCloseModalHandler}
             >
                 Close
             </button>

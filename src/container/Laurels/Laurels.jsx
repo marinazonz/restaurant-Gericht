@@ -24,9 +24,10 @@ const Laurels = () => {
                 <h1 className='headtext__cormorant'>Our Laurels</h1>
 
                 <div className='app__laurels_awards'>
-                    {data.awards.map((award) => {
+                    {data.awards.map((award, ind) => {
                         return (
                             <AwardCard
+                                key={ind}
                                 title={award.title}
                                 imgUrl={award.imgUrl}
                                 subtitle={award.subtitle}

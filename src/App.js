@@ -1,5 +1,5 @@
 import { Navbar } from "./components";
-import { useState } from "react";
+import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import {
@@ -21,34 +21,25 @@ import AboutUsPage from "./pages/AboutUsPage";
 import PhotoGalleryPage from "./pages/PhotoGalleryPage";
 
 import "./App.css";
+import AppContext from "./store/contex";
 
 function App() {
-    const [modalforLogInIsOpen, setModalforLogInIsOpen] = useState(false);
-    const [modalforBookTableIsOpen, setModalforBookTableIsOpen] =
-        useState(false);
-    const [appIsShown, setAppIsShown] = useState(true);
+    const appCtx = useContext(AppContext);
 
     const appWhole = (
         <>
-            <Navbar
-                openModalforLogIn={() => setModalforLogInIsOpen(true)}
-                openModalforBooktable={() => setModalforBookTableIsOpen(true)}
-            />
-            {modalforLogInIsOpen && (
-                <ModalOverlay onClose={() => setModalforLogInIsOpen(false)}>
-                    <RegisterForm
-                        onCloseModal={() => setModalforLogInIsOpen(false)}
-                    />
+            <Navbar />
+            {appCtx.modalforRigisterIsOpen && (
+                <ModalOverlay onClose={() => appCtx.toggleModalforRegister()}>
+                    <RegisterForm />
                 </ModalOverlay>
             )}
-            {modalforBookTableIsOpen && (
-                <ModalOverlay onClose={() => setModalforBookTableIsOpen(false)}>
-                    <BookTable
-                        onCloseModal={() => setModalforBookTableIsOpen(false)}
-                    />
+            {appCtx.modalforBookTableIsOpen && (
+                <ModalOverlay onClose={() => appCtx.toggleModalforBookTable()}>
+                    <BookTable />
                 </ModalOverlay>
             )}
-            <Header openPageMenu={() => setAppIsShown(false)} />
+            <Header />
             <AboutUs />
             <SpecialMenu />
             <Chef />
@@ -62,14 +53,10 @@ function App() {
 
     return (
         <div className='App'>
-            {appIsShown && appWhole}
+            {appCtx.appIsShown && appWhole}
             <Routes>
-                <Route
-                    path='/menu'
-                    element={
-                        <MenuPage onClosePage={() => setAppIsShown(true)} />
-                    }
-                />
+                <Route path='/' element={appCtx.appIsShown && appWhole} />
+                <Route path='/menu' element={<MenuPage />} />
                 <Route path='/about_us' element={<AboutUsPage />} />
                 <Route path='/photo_gallery' element={<PhotoGalleryPage />} />
             </Routes>

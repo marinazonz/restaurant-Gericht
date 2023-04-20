@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { images } from "../../constants";
 
 import "./Header.css";
 import { SubHeading } from "../../components";
+import AppContext from "../../store/contex";
 
-const Header = ({ openPageMenu }) => {
+const Header = () => {
+    const appCtx = useContext(AppContext);
+
+    const openPageHandler = () => {
+        appCtx.toOpenPage();
+    };
     return (
         <div className='app_header app__wrapper section__padding' id='home'>
             <div className='app__wrapper_info'>
@@ -19,7 +25,7 @@ const Header = ({ openPageMenu }) => {
                 <button
                     type='button'
                     className='custom__button'
-                    onClick={openPageMenu}
+                    onClick={openPageHandler}
                 >
                     <Link to='/menu'>Explore Menu</Link>
                 </button>
