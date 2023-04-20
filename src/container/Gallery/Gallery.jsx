@@ -1,4 +1,5 @@
-import React, { useRef, scrollIntoView } from "react";
+import React, { useRef, useContext } from "react";
+import { Link } from "react-router-dom";
 import {
     BsInstagram,
     BsArrowLeftShort,
@@ -7,11 +8,16 @@ import {
 
 import { images } from "../../constants";
 import { SubHeading } from "../../components";
+import AppContext from "../../store/contex";
 import "./Gallery.css";
-import { MdOutlineSignalWifiStatusbarConnectedNoInternet4 } from "react-icons/md";
 
 const Gallery = () => {
     const scrollRef = useRef(null);
+    const appCtx = useContext(AppContext);
+
+    const openPageHandler = () => {
+        appCtx.toOpenPage();
+    };
 
     const galleruImages = [
         images.gallery01,
@@ -40,8 +46,12 @@ const Gallery = () => {
                     Volutpat mattis ipsum turpis elit elit scelerisque egestas
                     mu.
                 </p>
-                <button type='button' className='custom__button'>
-                    View More
+                <button
+                    type='button'
+                    className='custom__button'
+                    onClick={openPageHandler}
+                >
+                    <Link to='/photo_gallery'>View More</Link>
                 </button>
             </div>
 

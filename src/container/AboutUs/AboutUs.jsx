@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import "./AboutUs.css";
 import { images } from "../../constants";
@@ -37,7 +38,7 @@ const AboutUs = () => {
                         className='custom__button'
                         onClick={openPageHandler}
                     >
-                        Know More
+                        <Link to='/about_us'>Know More</Link>
                     </button>
                 </div>
 
@@ -62,7 +63,7 @@ const AboutUs = () => {
                         className='custom__button'
                         onClick={openPageHandler}
                     >
-                        Know More
+                        <Link to='/about_us'>Know More</Link>
                     </button>
                 </div>
             </div>
