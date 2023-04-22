@@ -37,7 +37,7 @@ const MenuPage = () => {
 
                 <div className='app__menuPage-navbar-links'>
                     <Link
-                        to='/'
+                        to='..'
                         className='p__opensans'
                         onClick={closePageHandle}
                     >

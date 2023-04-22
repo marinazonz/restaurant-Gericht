@@ -45,23 +45,15 @@ const Navbar = () => {
                 </li>
             </ul>
             <div className='app__navbar-login'>
-                <a
-                    href='#login'
-                    className='p__opensans'
-                    onClick={openRegisterHandler}
-                >
+                <p className='p__opensans' onClick={openRegisterHandler}>
                     Register
-                </a>
+                </p>
 
                 <div className='app__navbar-login-divLine' />
 
-                <a
-                    href='#book'
-                    className='p__opensans'
-                    onClick={openBookTableHandler}
-                >
+                <p className='p__opensans' onClick={openBookTableHandler}>
                     Book Table
-                </a>
+                </p>
             </div>
             <div className='app__navbar-smallscreen'>
                 <GiHamburgerMenu

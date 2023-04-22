@@ -47,14 +47,15 @@
     align-items: center;
 }
 
-.app__navbar-login a {
+.app__navbar-login p {
     margin: 0 1rem;
     text-decoration: none;
     transition: 0.2s ease;
     border-bottom: 1px solid var(--color-black);
+    cursor: pointer;
 }
 
-.app__navbar-login a:hover {
+.app__navbar-login p:hover {
     border-bottom: 1px solid var(--color-golden);
 }
 

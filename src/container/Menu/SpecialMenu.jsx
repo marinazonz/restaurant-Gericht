@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import "./SpecialMenu.css";
 import { images, data } from "../../constants";
 import { MenuItem, SubHeading } from "../../components";
+import AppContext from "../../store/contex";
 
 const SpecialMenu = () => {
+    const appCtx = useContext(AppContext);
+
+    const openPageHandler = () => {
+        appCtx.toOpenPage();
+    };
+
     return (
         <div className='app__menu section__padding flex__center' id='menu'>
             <div className='app__menu-title'>
@@ -49,8 +57,12 @@ const SpecialMenu = () => {
                     </div>
                 </div>
             </div>
-            <button type='button' className='custom__button'>
-                View More
+            <button
+                type='button'
+                className='custom__button'
+                onClick={openPageHandler}
+            >
+                <Link to='/menu'>View More</Link>
             </button>
         </div>
     );

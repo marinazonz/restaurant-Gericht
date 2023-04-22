@@ -53,7 +53,6 @@ function App() {
 
     return (
         <div className='App'>
-            {appCtx.appIsShown && appWhole}
             <Routes>
                 <Route path='/' element={appCtx.appIsShown && appWhole} />
                 <Route path='/menu' element={<MenuPage />} />

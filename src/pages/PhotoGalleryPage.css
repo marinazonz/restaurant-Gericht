@@ -21,7 +21,9 @@
 
 .app__photoGalleryPage-container {
     width: 100%;
-    margin: 5rem 0;
+    flex-wrap: wrap;
+    max-height: 100%;
+    overflow: scroll;
 }
 
 .app__photoGalleryPage-navbar {
@@ -43,8 +45,33 @@
 
 @media screen and (max-width: 1150px) {
     .app__photoGalleryPage-container {
-        flex-direction: column;
         align-items: center;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .app__photoGalleryPage-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .app__photoGalleryPage-container div {
+        margin-bottom: 1rem;
+    }
+
+    .app__photoGalleryPage h1 {
+        font-weight: 600;
+        font-size: 54px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .app__photoGalleryPage h1 {
+        font-weight: 600;
+        font-size: 32px;
+    }
+
+    .app__photoGalleryPage-container div {
+        height: 100px;
     }
 }
