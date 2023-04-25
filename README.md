@@ -1,4 +1,7 @@
-Restaurant Gericht
+Fully responsive Restaurant Application
+using:
+React
+BEM
 
 Figma File - https://www.figma.com/file/yvClSI9AZB...
 
