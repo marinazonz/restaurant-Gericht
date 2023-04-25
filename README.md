@@ -1,6 +1,9 @@
 Fully responsive Restaurant Application
+<br>
 using:
+<br>
 React
+<br>
 BEM
 
 Figma File - https://www.figma.com/file/yvClSI9AZB...
